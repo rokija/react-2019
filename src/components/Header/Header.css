@@ -1,0 +1,24 @@
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 1px 3px 34px -3px rgba(0,0,0,0.20);
+}
+
+.Header__title {
+    display: flex;
+    align-items: center;
+}
+
+.Header__title__logo {
+    height: 20px;
+    margin-right: 10px;
+}

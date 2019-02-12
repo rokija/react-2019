@@ -14,9 +14,9 @@ class UserList extends Component {
   render() {
     return (
       <div className="UserList">
-        {userList.map((user, i) => (
+        {userList.map((user, index) => (
           <UserCard
-            key={i}
+            key={`userCard${index}`}
             image={user.image}
             title={user.title}
             description={user.description}
