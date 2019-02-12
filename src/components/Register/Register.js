@@ -19,6 +19,7 @@ class Register extends Component {
 
   render() {
     const { email, password, username } = this.state;
+    const { onRegister } = this.props;
 
     return (
       <div className="Register">
@@ -57,7 +58,12 @@ class Register extends Component {
                 value={password}
               />
             </div>
-            <Button color="dark">Login</Button>
+            <Button
+              onClick={() => onRegister(username, email, password)}
+              color="dark"
+            >
+              Login
+            </Button>
           </form>
         </div>
       </div>
