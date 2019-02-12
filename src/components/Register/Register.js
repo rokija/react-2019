@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import "./Login.css";
+import "./Register.css";
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       email: "",
+      username: "",
       password: ""
     };
   }
@@ -17,13 +18,24 @@ class Login extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, username } = this.state;
 
     return (
-      <div className="Login">
-        <div className="Login__content">
-          <h2>Login</h2>
+      <div className="Register">
+        <div className="Register__content">
+          <h2>Register</h2>
           <form>
+            <div className="form-group">
+              <label>username</label>
+              <input
+                onChange={this.onInputChange}
+                className="form-control"
+                type="text"
+                name="username"
+                value={username}
+              />
+            </div>
+
             <div className="form-group">
               <label>email</label>
               <input
@@ -53,4 +65,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;

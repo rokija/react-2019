@@ -9,21 +9,17 @@ const posts = [
   { title: "Third title", description: "y", image: placeHolderImage }
 ];
 
-class Posts extends Component {
-  render() {
-    return (
-      <div className="Posts">
-        {posts.map((post, index) => (
-          <PostCard
-            key={index}
-            title={post.title}
-            description={post.description}
-            image={post.image}
-          />
-        ))}
-      </div>
-    );
-  }
-}
+const Posts = () => (
+  <div className="Posts">
+    {posts.map((post, index) => (
+      <PostCard
+        key={index}
+        title={post.title}
+        description={post.description}
+        image={post.image}
+      />
+    ))}
+  </div>
+);
 
 export default Posts;
