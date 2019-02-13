@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 class Register extends Component {
@@ -19,12 +20,12 @@ class Register extends Component {
 
   render() {
     const { email, password, username } = this.state;
-    const { onRegister } = this.props;
 
     return (
       <div className="Register">
         <div className="Register__content">
           <h2>Register</h2>
+          {email}
           <form>
             <div className="form-group">
               <label>username</label>
@@ -44,7 +45,6 @@ class Register extends Component {
                 className="form-control"
                 type="email"
                 name="email"
-                value={email}
               />
             </div>
 
@@ -59,12 +59,21 @@ class Register extends Component {
               />
             </div>
             <Button
-              onClick={() => onRegister(username, email, password)}
+              onClick={() =>
+                this.props.onRegister(
+                  this.state.username,
+                  this.state.email,
+                  this.state.password
+                )
+              }
               color="dark"
             >
-              Login
+              Register
             </Button>
           </form>
+          <div className="Register__content__link">
+            <Link to="/login">already registered? login</Link>
+          </div>
         </div>
       </div>
     );

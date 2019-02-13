@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import placeHolderImage from "../../assets/image-placeholder.svg";
 import PostCard from "../PostCard/PostCard";
 import "./Posts.css";
