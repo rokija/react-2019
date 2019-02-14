@@ -4,7 +4,7 @@ class APIClass {
   constructor() {
     this.instance = axios.create({
       baseURL: process.env.REACT_APP_APIURL,
-      timeout: 1000
+      timeout: 10000
     });
   }
 
@@ -16,7 +16,9 @@ class APIClass {
   }
 
   get(url) {
-    return this.call("get", url);
+    return this.instance.get(url, {
+      headers: this.getDefaultHeaders()
+    });
   }
 
   post(url, data) {

@@ -5,7 +5,9 @@ import {
   REGISTER_SUCCESS,
   REGISTER_ERROR,
   LOGIN_ERROR,
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS,
+  GET_USERS_SUCCESS,
+  GET_USERS_ERROR
 } from "../../constants";
 
 /* ------ actions ------- */
@@ -31,6 +33,19 @@ const loginSuccess = () => {
 const loginError = () => {
   return {
     type: LOGIN_ERROR
+  };
+};
+
+const getUsersSuccess = res => {
+  return {
+    type: GET_USERS_SUCCESS,
+    payload: res.data.payload
+  };
+};
+
+const getUsersError = () => {
+  return {
+    type: GET_USERS_ERROR
   };
 };
 
@@ -61,5 +76,18 @@ export const login = (email, password) => {
         dispatch(loginSuccess());
       })
       .catch(() => dispatch(loginError()));
+  };
+};
+
+export const getUsers = () => {
+  return dispatch => {
+    return BootcampAPI.get(API.GET_USERS)
+      .then(res => {
+        dispatch(getUsersSuccess(res));
+      })
+      .catch(err => {
+        console.error(err);
+        dispatch(getUsersError());
+      });
   };
 };

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Posts from "./components/Posts/Posts";
+import Posts from "./containers/PostsContainer";
 import { Row, Container } from "reactstrap";
-import UserList from "./components/UserList/UserList";
+import UserList from "./containers/UserListContainer";
 import Header from "./components/Header/Header";
 import "./App.css";
 
