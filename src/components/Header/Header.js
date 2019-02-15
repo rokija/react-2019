@@ -5,24 +5,8 @@ import accentureLogo from "../../assets/logo-acn.png";
 import "./Header.css";
 
 class Header extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isOpen: false
-    };
-  }
-
-  onOpenModal = () => {
-    this.setState({ isOpen: true });
-  };
-
-  onCloseModal = () => {
-    this.setState({ isOpen: false });
-  };
-
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, toggleModal } = this.props;
 
     return (
       <div className="Header">
@@ -34,10 +18,10 @@ class Header extends Component {
           />
           Bootcamp title
         </div>
-        <Button onClick={this.onOpenModal} color="dark">
+        <Button onClick={toggleModal} color="dark">
           Upload
         </Button>
-        {isOpen && <PostModal onClose={this.onCloseModal} />}
+        {isOpen && <PostModal onClose={toggleModal} />}
       </div>
     );
   }
