@@ -5,10 +5,12 @@ import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from "redux-thunk";
 import { Provider } from "react-redux";
 import dotenv from "dotenv";
+import ProtectedRoute from "react-router-protected-route";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import rootReducer from "./redux/reducers";
 import App from "./App";
+import ProtectedRouteContainer from "./containers/ProtectedRouteContainer";
 import LoginContainer from "./containers/LoginContainer";
 import RegisterContainer from "./containers/RegisterContainer";
 
@@ -27,7 +29,7 @@ class Root extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={App} />
+            <ProtectedRouteContainer exact path="/" component={App} />
             <Route exact path="/login" component={LoginContainer} />
             <Route exact path="/register" component={RegisterContainer} />
           </Switch>

@@ -24,9 +24,10 @@ const registerError = () => {
   };
 };
 
-const loginSuccess = () => {
+const loginSuccess = token => {
   return {
-    type: LOGIN_SUCCESS
+    type: LOGIN_SUCCESS,
+    token
   };
 };
 
@@ -73,7 +74,7 @@ export const login = (email, password) => {
         const token = res.data.payload.token;
 
         localStorage.setItem("jwtToken", token);
-        dispatch(loginSuccess());
+        dispatch(loginSuccess(token));
       })
       .catch(() => dispatch(loginError()));
   };
@@ -89,5 +90,15 @@ export const getUsers = () => {
         console.error(err);
         dispatch(getUsersError());
       });
+  };
+};
+
+export const validateToken = () => {
+  return dispatch => {
+    const token = localStorage.getItem("jwtToken");
+    if (token) {
+      dispatch(loginSuccess(token));
+    }
+    dispatch(loginError());
   };
 };

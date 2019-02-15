@@ -6,7 +6,13 @@ import "./Header.css";
 
 class Header extends Component {
   render() {
-    const { isOpen, toggleModal } = this.props;
+    const {
+      isOpen,
+      toggleModal,
+      onInputChange,
+      onImageUpload,
+      onPostSubmit
+    } = this.props;
 
     return (
       <div className="Header">
@@ -21,7 +27,14 @@ class Header extends Component {
         <Button onClick={toggleModal} color="dark">
           Upload
         </Button>
-        {isOpen && <PostModal onClose={toggleModal} />}
+        {isOpen && (
+          <PostModal
+            onImageUpload={onImageUpload}
+            onInputChange={onInputChange}
+            onPostSubmit={onPostSubmit}
+            onClose={toggleModal}
+          />
+        )}
       </div>
     );
   }
