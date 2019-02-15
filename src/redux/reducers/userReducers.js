@@ -10,8 +10,7 @@ import {
 const defaultState = {
   isRegistered: false,
   isLoggedIn: false,
-  users: null,
-  token: null
+  users: null
 };
 
 export const registerReducer = (state = defaultState, action) => {
@@ -28,8 +27,7 @@ export const registerReducer = (state = defaultState, action) => {
 export const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
-      console.log("login reducer", action.token);
-      return { ...state, isLoggedIn: true, token: action.token };
+      return { ...state, isLoggedIn: true };
     case LOGIN_ERROR:
       return { ...state, isLoggedIn: false };
     default:
