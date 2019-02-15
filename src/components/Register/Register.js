@@ -3,6 +3,8 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./Register.css";
 
+export const sum = (a, b) => a + b;
+
 class Register extends Component {
   constructor(props) {
     super(props);

@@ -4,19 +4,16 @@ import { connect } from "react-redux";
 import { validateToken } from "../redux/actions/userActions";
 
 class ProtectedRouteContainer extends Component {
-  componentDidMount() {
-    this.props.validateToken();
-  }
+  constructor(props) {
+    super(props);
 
-  componentDidUpdate() {
-    console.log("component did update", this.props);
+    this.token = localStorage.getItem("jwtToken");
   }
 
   render() {
     const { component, path } = this.props;
-    console.log(this.props);
 
-    return this.props.token ? (
+    return this.token ? (
       <Route exact path={path} component={component} />
     ) : (
       <Redirect to="/login" />
@@ -27,8 +24,7 @@ class ProtectedRouteContainer extends Component {
 const mapStateToProps = state => {
   console.log("map state", state);
   return {
-    isLoggedIn: state.loginReducer.isLoggedIn,
-    token: state.loginReducer.token
+    isLoggedIn: state.loginReducer.isLoggedIn
   };
 };
 

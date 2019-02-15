@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostCard component renders properly 1`] = `
+<Card
+  className="PostCard mb-5"
+  tag="div"
+>
+  <CardImg
+    alt="Card image cap"
+    tag="img"
+    top={true}
+    width="100%"
+  />
+  <CardBody
+    tag="div"
+  >
+    <CardTitle
+      className="PostCard__card-title"
+      tag="div"
+    />
+    <CardText
+      tag="p"
+    />
+  </CardBody>
+</Card>
+`;

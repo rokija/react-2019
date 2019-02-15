@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register component renders properly 1`] = `
+<div
+  className="Register"
+>
+  <div
+    className="Register__content"
+  >
+    <h2>
+      Register
+    </h2>
+    <form>
+      <div
+        className="form-group"
+      >
+        <label>
+          username
+        </label>
+        <input
+          className="form-control"
+          name="username"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          email
+        </label>
+        <input
+          className="form-control"
+          name="email"
+          onChange={[Function]}
+          type="email"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          password
+        </label>
+        <input
+          className="form-control"
+          name="password"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <Button
+        color="dark"
+        onClick={[Function]}
+        tag="button"
+      >
+        Register
+      </Button>
+    </form>
+    <div
+      className="Register__content__link"
+    >
+      <Link
+        replace={false}
+        to="/login"
+      >
+        already registered? login
+      </Link>
+    </div>
+  </div>
+</div>
+`;
