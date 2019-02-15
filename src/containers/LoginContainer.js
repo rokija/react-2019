@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { login } from "../redux/actions/userActions";
 import Login from "../components/Login/Login";
 
